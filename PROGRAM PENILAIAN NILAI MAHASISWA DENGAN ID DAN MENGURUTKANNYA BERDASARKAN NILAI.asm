@@ -4,13 +4,13 @@ JMP START
 
 DATA SEGMENT 
     N      DW      ?                                                              
-    MARKS  DB 1000 DUP (?)  ; 1000 ADALAH JUMLAH MAKSIMUM SISWA
+    MARKS  DB 1000 DUP (?)  ; 1000 ADALAH JUMLAH MAKSIMUM MAHASISWA
     ID     DB 1000 DUP (?)
 	         
-	MSG1   DB 'Masukkan jumlah siswa (tidak boleh lebih dari 1000): ', 0
-	MSG2   DB 0Dh, 0Ah, 0Dh, 0Ah, 'Masukkan ID siswa: ', 0
-	MSG3   DB 0Dh, 0Ah, 0Dh, 0Ah, 'Masukkan nilai siswa: ', 0    
-	HR     DB 0Dh, 0Ah, 0Dh, 0Ah, '*******************Nilai Siswa yang Diurutkan***********************', 0
+	MSG1   DB 'MASUKKAN JUMLAH MAHASISWA (tidak boleh lebih dari 1000): ', 0
+	MSG2   DB 0Dh, 0Ah, 0Dh, 0Ah, 'MASUKKAN ID MAHASISWA: ', 0
+	MSG3   DB 0Dh, 0Ah, 0Dh, 0Ah, 'MASUKKAN NILAI MAHASISWA: ', 0    
+	HR     DB 0Dh, 0Ah, 0Dh, 0Ah, '*******************NILAI MAHASISWA YANG DIURUTKAN***********************', 0
 	MSG4   DB 0Dh, 0Ah, 0Dh, 0Ah, 'ID: ', 09H, 'NILAI:', 0                                
 DATA ENDS  
 
@@ -26,7 +26,7 @@ START:
     DEFINE_PRINT_NUM
     DEFINE_PRINT_NUM_UNS
         
-    ; BACA JUMLAH SISWA
+    ; BACA JUMLAH MAHASISWA
     LEA SI, MSG1
     CALL PRINT_STRING                                                        
     CALL SCAN_NUM
@@ -45,7 +45,7 @@ LOOP1:
     CMP SI, N 
     JNE LOOP1
         
-    ; BACA NILAI SISWA
+    ; BACA NILAI MAHASISWA
     LEA SI, MSG3
     CALL PRINT_STRING
     MOV SI, 0
